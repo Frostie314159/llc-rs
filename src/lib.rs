@@ -54,7 +54,7 @@ impl<'a> TryFromCtx<'a> for SnapLlcFrame<'a> {
             });
         }
         let oui = from.gread(&mut offset)?;
-        let ether_type = EtherType::from_bits(from.gread_with(&mut offset, Endian::Little)?);
+        let ether_type = EtherType::from_bits(from.gread_with(&mut offset, Endian::Big)?);
         let payload = &from[offset..];
         Ok((
             Self {
@@ -80,7 +80,7 @@ impl<Payload: TryIntoCtx<Error = scroll::Error>> TryIntoCtx for SnapLlcFrame<'_,
         buf.gwrite(SNAP_CODE, &mut offset)?;
         buf.gwrite(0b11u8, &mut offset)?;
         buf.gwrite(self.oui.as_slice(), &mut offset)?;
-        buf.gwrite_with(self.ether_type.into_bits(), &mut offset, Endian::Little)?;
+        buf.gwrite_with(self.ether_type.into_bits(), &mut offset, Endian::Big)?;
         buf.gwrite(self.payload, &mut offset)?;
         Ok(offset)
     }
