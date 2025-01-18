@@ -6,7 +6,7 @@ use ieee80211::{
     data_frame::{header::DataFrameHeader, DataFrame},
     mac_parser::BROADCAST,
 };
-use llc::SnapLlcFrame;
+use llc_rs::SnapLlcFrame;
 use scroll::Pwrite;
 
 fn main() {
