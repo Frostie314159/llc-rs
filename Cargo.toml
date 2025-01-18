@@ -2,6 +2,9 @@
 name = "llc-rs"
 version = "0.1.0"
 edition = "2021"
+authors = ["Frostie314159"]
+license = "MIT OR Apache-2.0"
+description = "A parser for logical link control frames."
 
 [dependencies]
 defmt = { version = "0.3.8", optional = true }
@@ -10,7 +13,7 @@ macro-bits = "0.1.5"
 scroll = { version = "0.12.0", default-features = false }
 
 [dev-dependencies]
-ieee80211 = "0.5.2"
+ieee80211 = { version = "0.5.2", default-features = false }
 
 [features]
 defmt = ["dep:defmt"]
