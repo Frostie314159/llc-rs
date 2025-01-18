@@ -5,6 +5,7 @@ edition = "2021"
 authors = ["Frostie314159"]
 license = "MIT OR Apache-2.0"
 description = "A parser for logical link control frames."
+repository = "https://github.com/Frostie314159/llc-rs"
 
 [dependencies]
 defmt = { version = "0.3.8", optional = true }
