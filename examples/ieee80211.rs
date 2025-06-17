@@ -18,7 +18,7 @@ fn main() {
         payload: [0x0u8].as_slice(),
         _phantom: PhantomData,
     };
-    let dataframe = DataFrame {
+    let data_frame = DataFrame {
         header: DataFrameHeader {
             fcf_flags: fcf,
             duration: 0,          // TODO
@@ -35,6 +35,6 @@ fn main() {
         _phantom: PhantomData,
     };
     let mut buf = [0x00u8; 1500];
-    let len = buf.pwrite(dataframe, 0).unwrap();
+    let len = buf.pwrite_with(data_frame, 0, false).unwrap();
     println!("{:?}", &buf[..len]);
 }

@@ -2,12 +2,13 @@
 
 use core::marker::PhantomData;
 
-use ether_type::EtherType;
 use macro_bits::{bit, check_bit};
 use scroll::{
     ctx::{MeasureWith, TryFromCtx, TryIntoCtx},
     Endian, Pread, Pwrite,
 };
+
+pub use ether_type::EtherType;
 
 const SNAP_CODE: u8 = 0xaa;
 
