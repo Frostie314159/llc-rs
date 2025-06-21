@@ -9,7 +9,7 @@ repository = "https://github.com/Frostie314159/llc-rs"
 
 [dependencies]
 defmt = { version = "1.0.1", optional = true }
-ether-type = "0.1.4"
+ether-type = "0.1.5"
 macro-bits = "0.1.5"
 scroll = { version = "0.13.0", default-features = false }
 
